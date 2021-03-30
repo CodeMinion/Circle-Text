@@ -6,13 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+   <androidx.appcompat.widget.AppCompatEditText
+       android:id="@+id/top_text"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:hint="@string/hint_top_text"
+       android:layout_marginStart="@dimen/spacing_small"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/bottom_text"
+       />
+
+   <androidx.appcompat.widget.AppCompatEditText
+       android:id="@+id/bottom_text"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:hint="@string/hint_bottom_text"
+       android:layout_marginStart="@dimen/spacing_small"
+       app:layout_constraintStart_toEndOf="@id/top_text"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="@id/top_text"
+       />
+
+   <Button
+       android:id="@+id/generate_text"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/text_button_generate"
+       android:layout_marginStart="@dimen/spacing_small"
+       android:layout_marginTop="@dimen/spacing_small"
+       app:layout_constraintTop_toBottomOf="@id/top_text"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       />
+
    <androidx.appcompat.widget.AppCompatImageView
        android:id="@+id/image"
        android:layout_width="@dimen/image_size"
        android:layout_height="@dimen/image_size"
+       android:layout_marginTop="@dimen/spacing_small"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/generate_text"
        app:layout_constraintBottom_toBottomOf="parent"
        />
 

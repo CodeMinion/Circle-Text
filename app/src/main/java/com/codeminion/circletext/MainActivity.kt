@@ -2,6 +2,8 @@ package com.codeminion.circletext
 import android.graphics.*
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -13,14 +15,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val generateButton: View = findViewById(R.id.generate_text)
+        val topText:EditText = findViewById(R.id.top_text)
+        val bottomText:EditText = findViewById(R.id.bottom_text)
+
+        generateButton.setOnClickListener {
+            generateBitmap(topText = topText.text.toString(), bottomText = bottomText.text.toString())
+        }
         // IMPORTANT - This is for sample purposes only.
         // The work in this sample if being done on the main thread to not
         // distract the readers from the main subject.
         // If doing something similar in your app make sure to take advantage
         // of Coroutines to run most of the work on a background thread.
 
-        val topText = "Brother Hackathon"
-        val bottomText = "2021"
+
+    }
+
+    fun generateBitmap(topText:String = "Brother Hackathon", bottomText:String = "2021") {
         val imageBitmap = BitmapFactory.decodeResource(resources, R.drawable.logo_brother)
 
         val imageView: ImageView = findViewById(R.id.image)
