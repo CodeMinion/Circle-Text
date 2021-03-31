@@ -13,6 +13,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        ndkVersion "21.0.6113669"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -34,4 +36,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.brother.sdk:printer:1.0.0'
 }

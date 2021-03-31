@@ -3,4 +3,5 @@
     <string name="hint_top_text">Enter Top Text</string>
     <string name="hint_bottom_text">Enter Bottom Text</string>
     <string name="text_button_generate">Generate</string>
+    <string name="text_button_print">Print</string>
 </resources>
